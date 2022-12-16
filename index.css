@@ -19,8 +19,11 @@ body {
     color: #00ffcc;
   }
   
-  .date {
+  .btnMenos, .btnMais {
     margin-top: 12px;
+    color: #00ffcc;
+    background-color: #191919;
+    box-shadow: none;
     font-size: 1.75em;
   }
   

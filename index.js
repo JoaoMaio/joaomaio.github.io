@@ -1,5 +1,8 @@
 const timeElement = document.querySelector(".time");
-const dateElement = document.querySelector(".date");
+const btnMenos = document.querySelector(".btnMenos").addEventListener("click", () => { start(0)});
+const btnMais = document.querySelector(".btnMais").addEventListener("click", () => { start(1)});
+const numero = document.querySelector(".numero");
+var valor = 0;
 
 /**
  * @param {Date} date
@@ -47,9 +50,25 @@ function formatDate(date) {
   } ${date.getDate()} ${date.getFullYear()}`;
 }
 
+
+function start(x) {
+
+    if(numero.textContent > 0)
+    {
+        if (x == 0) 
+            valor = valor - 1;
+    }
+
+    if (x == 1) 
+        valor = valor + 1;
+
+numero.textContent = valor;
+}
+
+
 setInterval(() => {
   const now = new Date();
 
   timeElement.textContent = formatTime(now);
-  dateElement.textContent = formatDate(now);
+
 }, 200);
