@@ -2,7 +2,14 @@ const timeElement = document.querySelector(".time");
 const btnMenos = document.querySelector(".btnMenos").addEventListener("click", () => { start(0)});
 const btnMais = document.querySelector(".btnMais").addEventListener("click", () => { start(1)});
 const numero = document.querySelector(".numero");
+
+const timeElement2 = document.querySelector(".time2");
+const btnMenos2 = document.querySelector(".btnMenos2").addEventListener("click", () => { start2(0)});
+const btnMais2 = document.querySelector(".btnMais2").addEventListener("click", () => { start2(1)});
+const numero2 = document.querySelector(".numero2");
+
 var valor = 0;
+var valor2 = 0;
 
 /**
  * @param {Date} date
@@ -65,10 +72,26 @@ function start(x) {
 numero.textContent = valor;
 }
 
+function start2(x) {
+
+  if(numero2.textContent > 0)
+  {
+      if (x == 0) 
+          valor2 = valor2 - 1;
+  }
+
+  if (x == 1) 
+      valor2 = valor2 + 1;
+
+numero2.textContent = valor2;
+}
+
+
 
 setInterval(() => {
   const now = new Date();
 
   timeElement.textContent = formatTime(now);
+  timeElement2.textContent = formatTime(now);
 
 }, 200);
